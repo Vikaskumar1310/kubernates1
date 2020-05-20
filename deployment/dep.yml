@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myweb-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myweb-app 
+
+  template:
+    metadata:
+      name: myweb-pod
+      labels:
+        app: myweb-app
+        tier: frontend
+    spec:
+      containers:
+      - name: myweb-container
+        image: vimal13/apache-webserver-php
+        ports:
+        - containerPort: 80
+
