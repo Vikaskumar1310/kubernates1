@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: myweb-container
-        image: vimal13/apache-webserver-php:v1
+        image: vimal13/apache-webserver-php
         ports:
         - containerPort: 80
 
